@@ -12,13 +12,14 @@
   font-size: 30px;
   letter-spacing: 9px;
   font-weight: 900;
+  overflow-x: hidden;
 
-  & div {
+  div {
     position: relative;
     padding: calc($base-size * 0.6);
   }
 
-  & .background-image {
+  .background-image {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -27,14 +28,14 @@
     object-fit: cover;
   }
 
-  & .main-tittle {
+  .main-tittle {
     font-size: 150px;
     letter-spacing: 50px;
     text-transform: uppercase;
     filter: drop-shadow(0 0 71px rgba(0, 0, 0, 0.39));
   }
 
-  & .transition-shadow {
+  .transition-shadow {
     position: absolute;
     left: 0px;
     bottom: 0%;
@@ -51,7 +52,7 @@
     font-size: 28px;
     letter-spacing: 8px;
 
-    & .main-tittle {
+    .main-tittle {
       font-size: 140px;
       letter-spacing: 45px;
     }
@@ -63,7 +64,7 @@
     font-size: 26px;
     letter-spacing: 6px;
 
-    & .main-tittle {
+    .main-tittle {
       font-size: 120px;
       letter-spacing: 35px;
     }
@@ -75,7 +76,7 @@
     font-size: 18px;
     letter-spacing: 5px;
 
-    & .main-tittle {
+    .main-tittle {
       font-size: 80px;
       letter-spacing: 18px;
     }
