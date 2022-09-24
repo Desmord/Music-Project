@@ -102,7 +102,7 @@ nav {
     text-align: center;
     padding: 5px 0px;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }
@@ -138,4 +138,12 @@ nav {
       line-height: 20px;
     }
   }
+}
+
+
+/*  Footer */
+footer {
+  color: $color-grey;
+  text-align: center;
+  padding: 20px;
 }
