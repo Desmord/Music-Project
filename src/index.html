@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Mikołaj Chojnacki">
     <title>Music Project</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -30,9 +32,35 @@
             <div class="nav__button">DISCOVER</div>
         </nav>
 
-        <!-- Here songs linst base on data -->
+        <!-- <section class="search"></section> -->
+        <!-- <seciton class="discover"></seciton> -->
+        <!--  -->
 
-        <!-- here main content -->
+        <section class="music-list">
+            <!-- <script id="template-music-list" type="text/x-handlebars-template"></script> -->
+
+            {{#each songs}}
+            <div class="song">
+                <div class="song__tittle">{{author}} - {{name}}</div>
+                <div class="song__track-container">
+                    <audio>
+                        <source src="{{src}}" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="song__info">
+                    <div class="song__categories">Categories: {{#each categories}}{{this}}{{/each}}</div>
+                    <div class="song__ranking">#{{rank}} in the rankings</div>
+                </div>
+            </div>
+            {{/each}}
+
+            <!-- </script> -->
+        </section>
+
+
+
+
+
         <section class="homepage">
             <img class="background-image" src="images/subscribe.jpg" alt="">
             <div class="subscribe">SUBSCRIBE<span>NOW</span></div>
@@ -49,13 +77,11 @@
             </div>
         </section>
 
-        <!-- <section class="search"></section> -->
-        <!-- <seciton class="discover"></seciton> -->
-        <!--  -->
         <footer>All rights reserved</footer>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
     <script src="js/app.js" type="module"></script>
 </body>
 
