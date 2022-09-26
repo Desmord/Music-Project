@@ -1,4 +1,5 @@
-
+/* global GreenAudioPlayer */
+import { selects } from './settings.js';
 /**
  * 
  * @param {src,categorie,rank} songs 
@@ -25,4 +26,24 @@ export const createSongsObject = (songs) => {
   });
 
   return newSongs;
+};
+
+
+export const refreshMusicList = (songs) => {
+  const wrapper = document.querySelector(selects.musicList);
+  const templateHendleBar = Handlebars.compile(wrapper.innerHTML);
+
+  if (songs.length === 0) {
+    wrapper.innerHTML = ``;
+  } else {
+    const generateHTML = templateHendleBar({ songs: createSongsObject(songs) });
+
+    wrapper.innerHTML = generateHTML;
+
+    GreenAudioPlayer.init({
+      selector: '.song__track-container', // inits Green Audio Player on each audio container that has class "player"
+      stopOthersOnPlay: true
+    });
+  }
+
 };

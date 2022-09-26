@@ -28,9 +28,9 @@
 
 
         <nav>
-            <div class="nav__button nav__button--active">HOME</div>
-            <div class="nav__button">SEARCH</div>
-            <div class="nav__button">DISCOVER</div>
+            <div id="home" class="nav__button nav__button--active">HOME</div>
+            <div id="search" class="nav__button">SEARCH</div>
+            <div id="discover" class="nav__button">DISCOVER</div>
         </nav>
 
 
@@ -45,22 +45,19 @@
         </section>
 
 
-
-        <seciton class="discover page--not-active">
+        <section class="discover page--not-active">
             <div class="discover__tittle">DISCOVER</div>
             <div class="discover__label">Give it a try!</div>
-        </seciton>
-
+        </section>
 
 
         <section class="music-list">
-            <!-- <script id="template-music-list" type="text/x-handlebars-template"></script> -->
             {{#each songs}}
             <div class="song">
                 <div class="song__tittle">{{author}} - {{name}}</div>
                 <div class="song__track-container">
                     <audio>
-                        <!-- <source src="{{src}}" type="audio/mpeg"> -->
+                        <source src="{{src}}" type="audio/mpeg">
                     </audio>
                 </div>
                 <div class="song__info">
@@ -69,12 +66,10 @@
                 </div>
             </div>
             {{/each}}
-            <!-- </script> -->
         </section>
 
 
-
-        <section class="homepage page--not-active">
+        <section class="homepage page--active">
             <img class="background-image" src="images/subscribe.jpg" alt="">
             <div class="subscribe">SUBSCRIBE<span>NOW</span></div>
             <div class="join-now">
@@ -90,7 +85,9 @@
             </div>
         </section>
 
+
         <footer>All rights reserved</footer>
+
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>

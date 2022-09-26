@@ -1,20 +1,18 @@
 .discover {
+  &__tittle {
+    color: $color-grey;
+    text-align: center;
+    font-size: 38px;
+    letter-spacing: 6px;
+    font-weight: 600;
+    padding: 20px;
+  }
 
-
-    &__tittle {
-        color: $color-grey;
-        text-align: center;
-        font-size: 38px;
-        letter-spacing: 6px;
-        font-weight: 600;
-        padding: 20px;
-    }
-
-    &__label {
-        color: $color-light;
-        text-align: center;
-        font-size: 20px;
-        letter-spacing: 3px;
-        padding: 20px;
-    }
+  &__label {
+    color: $color-light;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 3px;
+    padding: 20px;
+  }
 }
