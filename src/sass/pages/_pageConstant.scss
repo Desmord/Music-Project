@@ -93,7 +93,7 @@ nav {
 
   .nav__button {
     width: 150px;
-    color: $color-light;
+    color: $color-grey;
     font-size: 28px;
     letter-spacing: 2px;
     line-height: 27px;
@@ -101,9 +101,15 @@ nav {
     font-weight: 600;
     text-align: center;
     padding: 5px 0px;
+    transition: color 0.3s ease;
+
+    &--active {
+      color: $color-light;
+    }
 
     &:hover {
       cursor: pointer;
+      color: $color-light;
     }
   }
 }

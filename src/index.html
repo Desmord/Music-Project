@@ -27,7 +27,7 @@
         </section>
 
         <nav>
-            <div class="nav__button">HOME</div>
+            <div class="nav__button nav__button--active">HOME</div>
             <div class="nav__button">SEARCH</div>
             <div class="nav__button">DISCOVER</div>
         </nav>
@@ -38,7 +38,6 @@
 
         <section class="music-list">
             <!-- <script id="template-music-list" type="text/x-handlebars-template"></script> -->
-
             {{#each songs}}
             <div class="song">
                 <div class="song__tittle">{{author}} - {{name}}</div>
@@ -48,16 +47,13 @@
                     </audio>
                 </div>
                 <div class="song__info">
-                    <div class="song__categories">Categories: {{#each categories}}{{this}}{{/each}}</div>
+                    <div class="song__categories">Categories: {{#each categories}}{{this}} {{/each}}</div>
                     <div class="song__ranking">#{{rank}} in the rankings</div>
                 </div>
             </div>
             {{/each}}
-
             <!-- </script> -->
         </section>
-
-
 
 
 

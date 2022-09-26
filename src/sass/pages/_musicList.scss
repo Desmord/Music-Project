@@ -1,6 +1,6 @@
 .music-list {
   position: relative;
-  width: 500px;
+  width: 450px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -30,7 +30,7 @@
     place-content: center;
   }
 
-  &__info{
+  &__info {
     width: calc(100% - 30px);
     display: flex;
     justify-content: space-between;
@@ -50,5 +50,31 @@
     font-weight: 400;
     letter-spacing: 1px;
     font-size: 14px;
+  }
+}
+
+
+/*  Media */
+@media all and (max-width: 768px) {
+  .music-list {
+    width: 400px;
+
+    &__tittle {
+      padding: 20px 15px;
+      font-size: 18px;
+    }
+
+    &__info {
+      padding: 10px;
+    }
+
+    &__categories {
+      font-size: 12px;
+    }
+
+    &__ranking {
+      font-size: 12px;
+    }
+
   }
 }
