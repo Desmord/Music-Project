@@ -12,6 +12,10 @@ export const selects = {
   },
   musicList: `.music-list`,
   searchButton: `.search__button`,
+  search: {
+    searchBar: `.search__search-bar`,
+    searchButton: `.search__button`,
+  }
 };
 
 

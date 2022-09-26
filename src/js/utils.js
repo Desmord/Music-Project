@@ -28,22 +28,43 @@ export const createSongsObject = (songs) => {
   return newSongs;
 };
 
+const getSongElement = (song) => {
+
+  let categories = ``;
+
+  song.categories.forEach(category => categories += `${category} `);
+
+  return `        <div class="song">
+  <div class="song__tittle">${song.author} - ${song.name}</div>
+  <div class="song__track-container">
+      <audio>
+          <source src="${song.src}" type="audio/mpeg">
+      </audio>
+  </div>
+  <div class="song__info">
+      <div class="song__categories">Categories: ${categories}</div>
+      <div class="song__ranking">#${song.rank} in the rankings</div>
+  </div>
+</div>`;
+
+};
+
 
 export const refreshMusicList = (songs) => {
   const wrapper = document.querySelector(selects.musicList);
-  const templateHendleBar = Handlebars.compile(wrapper.innerHTML);
+  const formatedSongs = createSongsObject(songs);
 
-  if (songs.length === 0) {
-    wrapper.innerHTML = ``;
-  } else {
-    const generateHTML = templateHendleBar({ songs: createSongsObject(songs) });
+  wrapper.innerHTML = ``;
 
-    wrapper.innerHTML = generateHTML;
+  let generateHTML = ``;
 
-    GreenAudioPlayer.init({
-      selector: '.song__track-container', // inits Green Audio Player on each audio container that has class "player"
-      stopOthersOnPlay: true
-    });
-  }
+  formatedSongs.forEach(song => { generateHTML += getSongElement(song); });
+
+  wrapper.innerHTML = generateHTML;
+
+  GreenAudioPlayer.init({
+    selector: '.song__track-container', // inits Green Audio Player on each audio container that has class "player"
+    stopOthersOnPlay: true
+  });
 
 };

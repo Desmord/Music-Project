@@ -1,30 +1,34 @@
+
+// /* global GreenAudioPlayer */
 import { songs } from './settings.js';
 import { refreshMusicList } from './utils.js';
 
 import Navigation from './components/Navigation.js';
+import Search from './components/Search.js';
 
 class App {
   constructor() {
     this.songs = [];
 
     this.getData();
-    this.initNavigation();
+    this.initNavigation(this.songs);
     this.initSearch(this.songs);
 
     refreshMusicList(this.songs);
+
+
   }
 
   getData() {
     this.songs = songs;
   }
 
-  initNavigation() {
-    new Navigation();
+  initNavigation(songs) {
+    new Navigation(songs);
   }
 
-  initSearch() {
-    // initSearch(songs) {
-
+  initSearch(songs) {
+    new Search(songs);
   }
 
 }

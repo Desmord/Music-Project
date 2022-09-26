@@ -1,10 +1,12 @@
 import { selects, classes } from '../settings.js';
+import { refreshMusicList } from '../utils.js';
 
 class Navigation {
-  constructor() {
+  constructor(songs) {
     this.dom = {
       nav: {}
     };
+    this.songs = songs;
 
     this.getElements();
     this.initActions();
@@ -25,16 +27,25 @@ class Navigation {
     this.dom.nav.home.addEventListener(`click`, (e) => {
       this.changeActivButton(e.target);
       this.changeActivePage(this.dom.homePage);
+
+      refreshMusicList(this.songs);
     });
 
     this.dom.nav.search.addEventListener(`click`, (e) => {
       this.changeActivButton(e.target);
       this.changeActivePage(this.dom.searchPage);
+      
+      refreshMusicList(this.songs);
     });
 
     this.dom.nav.discover.addEventListener(`click`, (e) => {
       this.changeActivButton(e.target);
       this.changeActivePage(this.dom.discoverPage);
+
+      const randomNumber = parseInt(Math.random() * (this.songs.length - 0) + 0);
+      const randomSong = this.songs[randomNumber];
+
+      refreshMusicList([randomSong]);
     });
 
   }

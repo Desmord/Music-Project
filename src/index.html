@@ -51,22 +51,7 @@
         </section>
 
 
-        <section class="music-list">
-            {{#each songs}}
-            <div class="song">
-                <div class="song__tittle">{{author}} - {{name}}</div>
-                <div class="song__track-container">
-                    <audio>
-                        <source src="{{src}}" type="audio/mpeg">
-                    </audio>
-                </div>
-                <div class="song__info">
-                    <div class="song__categories">Categories: {{#each categories}}{{this}} {{/each}}</div>
-                    <div class="song__ranking">#{{rank}} in the rankings</div>
-                </div>
-            </div>
-            {{/each}}
-        </section>
+        <section class="music-list"></section>
 
 
         <section class="homepage page--active">
