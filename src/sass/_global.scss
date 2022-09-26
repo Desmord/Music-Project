@@ -11,3 +11,23 @@ body {
   align-items: center;
   flex-direction: column;
 }
+
+
+.page--active{
+  display: block;
+}
+
+.page--not-active{
+  display: none;
+}
+
+/*  Green audio player*/
+.gap-progress {
+  background-color: $color-red !important;
+
+  .pin {
+    background-color: $color-red !important;
+  }
+
+}
+/*  */

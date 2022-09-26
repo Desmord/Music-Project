@@ -6,3 +6,8 @@ $color-light: #fff;
 $color-red: #cf383e;
 $color-grey: #bfbfbf;
 $color-black: #131313;
+
+@mixin flex-flexEnd{
+  display: flex;
+  justify-content: flex-end;
+}
