@@ -5,13 +5,13 @@ import { db } from './settings.js';
 
 import Navigation from './components/Navigation.js';
 import Search from './components/Search.js';
+import Home from './components/Home.js';
 
 class App {
   constructor() {
     this.songs = [];
 
     this.getData();
-
   }
 
   getData() {
@@ -21,11 +21,12 @@ class App {
       .then(parsedResponse => {
 
         this.songs = parsedResponse;
-        
+
         refreshMusicList(this.songs);
 
         this.initNavigation(this.songs);
         this.initSearch(this.songs);
+        this.initHome();
       });
 
   }
@@ -36,6 +37,10 @@ class App {
 
   initSearch(songs) {
     new Search(songs);
+  }
+
+  initHome() {
+    new Home();
   }
 
 }

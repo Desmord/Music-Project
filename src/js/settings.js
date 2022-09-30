@@ -15,7 +15,8 @@ export const selects = {
   search: {
     searchBar: `.search__search-bar`,
     searchButton: `.search__button`,
-  }
+  },
+  joinNow:`.join-now__button`,
 };
 
 export const db = {
