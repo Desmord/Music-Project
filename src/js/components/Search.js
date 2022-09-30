@@ -22,7 +22,7 @@ class Search {
       const searchPattern = new RegExp(`${this.dom.searchBar.value.toUpperCase()}`);
 
       const filterSongs = this.songs.filter(song => {
-        const name = song.src.replace(`songs/`, ``).split(`-`)[0].replaceAll(`_`, ` `).toUpperCase();
+        const name = song.filename.split(`-`)[0].replaceAll(`_`, ` `).toUpperCase();
 
         if (searchPattern.test(name)) {
           return true;

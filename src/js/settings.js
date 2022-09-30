@@ -18,34 +18,18 @@ export const selects = {
   }
 };
 
+export const db = {
+  songs: 'songs',
+  url: '//' + window.location.hostname + (window.location.hostname == 'localhost' ? ':3131' : ''),
+  dateStartParamKey: 'date_gte',
+  dateEndParamKey: 'date_lte',
+  notRepeatParam: 'repeat=false',
+  repeatParam: 'repeat_ne=false',
+};
 
 export const classes = {
   activeButton: `nav__button--active`,
   activePage: `page--active`,
   notActivePage: `page--not-active`,
 };
-
-
-
-// for testing only
-export const songs = [{
-  src: `songs/At_The_Top_-_David_Renda.mp3`,
-  categories: [`jeden`],
-  rank: 1
-},
-{
-  src: `songs/BASS_TRAP_-_Steve_Oxen.mp3`,
-  categories: [`jeden`, `piec`],
-  rank: 2
-},
-{
-  src: `songs/Silly_Feet_-_David_Renda.mp3`,
-  categories: [`jeden`, `cztery`],
-  rank: 3
-},
-{
-  src: `songs/Western_Adventures_-_David_Fesliyan.mp3`,
-  categories: [`jeden`, `trzy`],
-  rank: 4
-}];
 

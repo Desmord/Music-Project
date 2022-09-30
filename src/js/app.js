@@ -1,7 +1,7 @@
 
 // /* global GreenAudioPlayer */
-import { songs } from './settings.js';
 import { refreshMusicList } from './utils.js';
+import { db } from './settings.js';
 
 import Navigation from './components/Navigation.js';
 import Search from './components/Search.js';
@@ -11,16 +11,23 @@ class App {
     this.songs = [];
 
     this.getData();
-    this.initNavigation(this.songs);
-    this.initSearch(this.songs);
-
-    refreshMusicList(this.songs);
-
 
   }
 
   getData() {
-    this.songs = songs;
+
+    fetch(`${db.url}/${db.songs}`)
+      .then(rawResponse => rawResponse.json())
+      .then(parsedResponse => {
+
+        this.songs = parsedResponse;
+        
+        refreshMusicList(this.songs);
+
+        this.initNavigation(this.songs);
+        this.initSearch(this.songs);
+      });
+
   }
 
   initNavigation(songs) {

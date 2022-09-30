@@ -27,7 +27,7 @@ class Navigation {
     this.dom.nav.home.addEventListener(`click`, (e) => {
       this.changeActivButton(e.target);
       this.changeActivePage(this.dom.homePage);
-
+      
       refreshMusicList(this.songs);
     });
 
