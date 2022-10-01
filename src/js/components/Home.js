@@ -1,4 +1,4 @@
-import { selects } from '../settings.js'
+import { selects } from '../settings.js';
 
 class Home {
   constructor() {
@@ -6,6 +6,7 @@ class Home {
 
     this.getElements();
     this.initActions();
+    this.changeJoinInToUpperCase();
   }
 
   getElements() {
@@ -14,6 +15,10 @@ class Home {
 
   initActions() {
     this.dom.joinNow.addEventListener(`click`, () => window.location.hash = `/join-now`);
+  }
+
+  changeJoinInToUpperCase() {
+    this.dom.joinNow.innerHTML = `${this.dom.joinNow.innerHTML.toUpperCase()}`;
   }
 }
 
