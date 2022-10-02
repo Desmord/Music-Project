@@ -14,25 +14,34 @@ class Search {
   getElements() {
     this.dom.searchBar = document.querySelector(selects.search.searchBar);
     this.dom.searchButton = document.querySelector(selects.search.searchButton);
+    this.dom.searchResult = document.querySelector(selects.search.searchResult);
   }
 
   initActions() {
 
     this.dom.searchButton.addEventListener(`click`, () => {
-      const searchPattern = new RegExp(`${this.dom.searchBar.value.toUpperCase()}`);
 
-      const filterSongs = this.songs.filter(song => {
-        const name = song.filename.split(`-`)[0].replaceAll(`_`, ` `).toUpperCase();
+      if (this.dom.searchBar.value === ``) {
+        this.dom.searchResult.innerHTML = `We have found 0 songs...`;
+      } else {
 
-        if (searchPattern.test(name)) {
-          return true;
-        } else {
-          return false;
-        }
+        const searchPattern = new RegExp(`${this.dom.searchBar.value.toUpperCase()}`);
+        const filterSongs = this.songs.filter(song => {
+          const name = song.filename.split(`-`)[0].replaceAll(`_`, ` `).toUpperCase();
 
-      });
+          if (searchPattern.test(name)) {
+            return true;
+          } else {
+            return false;
+          }
 
-      refreshMusicList(filterSongs);
+        });
+
+        this.dom.searchResult.innerHTML = `We have found ${filterSongs.length} songs...`;
+
+        refreshMusicList(filterSongs);
+
+      }
 
     });
 
