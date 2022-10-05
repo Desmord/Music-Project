@@ -8,6 +8,7 @@ class Search {
 
     this.getElements();
     this.initActions();
+    this.refreshSearchNumber(songs.length);
   }
 
 
@@ -37,7 +38,7 @@ class Search {
 
         });
 
-        this.dom.searchResult.innerHTML = `We have found ${filterSongs.length} songs...`;
+        this.refreshSearchNumber(filterSongs.length);
 
         refreshMusicList(filterSongs);
 
@@ -45,6 +46,10 @@ class Search {
 
     });
 
+  }
+
+  refreshSearchNumber(searchedSongNumber) {
+    this.dom.searchResult.innerHTML = `We have found ${searchedSongNumber} songs...`;
   }
 
 }
