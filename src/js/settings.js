@@ -15,9 +15,10 @@ export const selects = {
   search: {
     searchBar: `.search__search-bar`,
     searchButton: `.search__button`,
-    searchResult:`.search__result`,
+    searchResult: `.search__result`,
   },
-  joinNow:`.join-now__button`,
+  joinNow: `.join-now__button`,
+  categorySection: `.category-select`,
 };
 
 export const db = {
@@ -33,5 +34,7 @@ export const classes = {
   activeButton: `nav__button--active`,
   activePage: `page--active`,
   notActivePage: `page--not-active`,
+  categorieActive: `category-active`,
+
 };
 

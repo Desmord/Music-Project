@@ -20,6 +20,7 @@ class Navigation {
     this.dom.homePage = document.querySelector(selects.pages.homePage);
     this.dom.searchPage = document.querySelector(selects.pages.searchPage);
     this.dom.discoverPage = document.querySelector(selects.pages.discoverPage);
+    this.dom.categorySelect = document.querySelector(selects.categorySection);
   }
 
   initActions() {
@@ -27,14 +28,15 @@ class Navigation {
     this.dom.nav.home.addEventListener(`click`, (e) => {
       this.changeActivButton(e.target);
       this.changeActivePage(this.dom.homePage);
-      
+      this.changeActivePage(this.dom.categorySelect);
+
       refreshMusicList(this.songs);
     });
 
     this.dom.nav.search.addEventListener(`click`, (e) => {
       this.changeActivButton(e.target);
       this.changeActivePage(this.dom.searchPage);
-      
+
       refreshMusicList(this.songs);
     });
 

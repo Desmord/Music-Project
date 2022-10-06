@@ -26,7 +26,7 @@ class App {
 
         this.initNavigation(this.songs);
         this.initSearch(this.songs);
-        this.initHome();
+        this.initHome(this.songs);
       });
 
   }
@@ -39,8 +39,8 @@ class App {
     new Search(songs);
   }
 
-  initHome() {
-    new Home();
+  initHome(songs) {
+    new Home(songs);
   }
 
 }
