@@ -1,4 +1,5 @@
 import { selects, classes } from '../settings.js';
+import { refreshMusicList } from '../utils.js';
 
 class Home {
   constructor(songs) {
@@ -42,7 +43,7 @@ class Home {
       const newCategorie = document.createElement(`span`);
 
       newCategorie.innerText = `${categorie}, `;
-      newCategorie.addEventListener(`click`, this.handleCategorieClick);
+      newCategorie.addEventListener(`click`, this.handleCategorieClick.bind(this));
 
       selectSection.appendChild(newCategorie);
     }
@@ -55,10 +56,17 @@ class Home {
 
     if (targetActiveStatus) {
       e.target.classList.remove(classes.categorieActive);
-      // tutaj resetujemy liste muzyki
+      refreshMusicList(this.songs);
     } else {
       for (let categorie of allCategories) { categorie.classList.remove(classes.categorieActive); }
       e.target.classList.add(classes.categorieActive);
+
+      const selectedCategory = e.target.innerHTML.replace(`,`, ``).replace(` `, ``);
+      const filtredSongs = this.songs.filter(song =>
+        song.categories.some(cat => cat.toLowerCase() === selectedCategory.toLowerCase() ? true : false));
+
+      refreshMusicList(filtredSongs);
+
     }
 
   }
