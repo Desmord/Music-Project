@@ -37,8 +37,18 @@
         <section class="search page--not-active">
             <div class="search__tittle">SEARCH</div>
             <div class="search__search-form">
-                <div class="search__label">Name</div>
-                <input type="text" class="search__search-bar" maxlength="30">
+                <div class="search__section">
+                    <div class="search__label">Name</div>
+                    <input type="text" class="search__search-bar" maxlength="30">
+                </div>
+                <div class="search__section">
+                    <div class="search__label">Category</div>
+                    <select name=" categories" id="category-select">
+                        <!-- <option value="notSelected"></option>
+                        <option value="option1">option 1</option>
+                        <option value="option2">option 2</option> -->
+                    </select>
+                </div>
                 <div class="search__button">SEARCH</div>
             </div>
             <div class="search__result">We have found 3 songs...</div>
@@ -51,13 +61,7 @@
         </section>
 
 
-        <section class="category-select page--active">
-            <!-- <span><b>Categories:</b></span>
-            <span class="category-active">cat1</span>
-            <span class="category-not-active">cat2</span>
-            <span class="category-not-active">cat3</span>
-            <span class="category-not-active">cat4</span> -->
-        </section>
+        <section class="category-select page--active"> </section>
 
 
         <section class="music-list"></section>

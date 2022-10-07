@@ -16,6 +16,8 @@ export const selects = {
     searchBar: `.search__search-bar`,
     searchButton: `.search__button`,
     searchResult: `.search__result`,
+    searchSelect: `#category-select`,
+    searchSelectOptions: `#category-select option`,
   },
   joinNow: `.join-now__button`,
   categorySection: `.category-select`,
